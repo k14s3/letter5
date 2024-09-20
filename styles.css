@@ -32,9 +32,9 @@ img {
     height: auto;
 }
 
-.fonts p {
-    font-size: 36px;
-    margin: 20px;
+.font-image {
+    max-width: 150px;
+    margin: 10px;
 }
 
 .hearts {
