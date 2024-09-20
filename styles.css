@@ -1,0 +1,44 @@
+body {
+    background-color: pink;
+    color: red;
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-image: url('hearts-background.png');
+    background-size: cover;
+}
+
+.container {
+    text-align: center;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 15px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    color: white;
+    background-color: red;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: darkred;
+}
+
+.fonts p {
+    margin: 20px 0;
+    font-size: 30px;
+}
+
+.font1 { font-family: 'Tattoo1'; }
+.font2 { font-family: 'Tattoo2'; }
+.font3 { font-family: 'Tattoo3'; }
+.font4 { font-family: 'Tattoo4'; }
