@@ -1,21 +1,16 @@
-// Start date: July 13, 2024 at 3:00 PM
-const startDate = new Date('2024-07-13T15:00:00');
-
-// Function to update the stopwatch
+// Stopwatch for hours, minutes, and seconds
 function updateStopwatch() {
+    const startDate = new Date('July 13, 2024 15:00:00');
     const now = new Date();
-    const timeDiff = now - startDate;
-
-    // Calculate the days, hours, and minutes
-    const days = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((timeDiff / (1000 * 60 * 60)) % 24);
-    const minutes = Math.floor((timeDiff / (1000 * 60)) % 60);
-
-    // Update the stopwatch element
-    document.getElementById('stopwatch').textContent = 
-        `${days} days, ${hours} hours, and ${minutes} minutes.`;
+    const diffMs = now - startDate;
+    
+    const diffHours = Math.floor(diffMs / (1000 * 60 * 60));
+    const diffMinutes = Math.floor((diffMs % (1000 * 60 * 60)) / (1000 * 60));
+    const diffSeconds = Math.floor((diffMs % (1000 * 60)) / 1000);
+    
+    document.getElementById('stopwatch').textContent = `${diffHours} hours, ${diffMinutes} minutes, and ${diffSeconds} seconds`;
 }
 
-// Update the stopwatch every minute
-setInterval(updateStopwatch, 60000);
-updateStopwatch();  // Initial call to display immediately
+// Update every second
+setInterval(updateStopwatch, 1000);
+updateStopwatch(); // Run on page load
