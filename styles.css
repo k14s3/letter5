@@ -1,60 +1,42 @@
-/* Existing Styles */
-body {
-    background-color: pink;
-    color: red;
-    font-family: 'Arial', sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-    background-image: url('hearts-background.png');
-    background-size: cover;
-}
-
-.container {
-    text-align: center;
-    padding: 20px;
-    background-color: rgba(255, 255, 255, 0.8);
-    border-radius: 15px;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
-}
-
-button {
-    padding: 10px 20px;
-    font-size: 16px;
-    color: white;
+/* All other styles */
+.heart {
+    width: 100px;
+    height: 100px;
     background-color: red;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
+    position: relative;
+    transform: rotate(-45deg);
+    margin: 10px;
 }
 
-button:hover {
-    background-color: darkred;
+.heart::before,
+.heart::after {
+    content: "";
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    border-radius: 50%;
+    position: absolute;
 }
 
-/* Tattoo Fonts */
-.font1 {
-    font-family: 'Great Vibes', cursive;
-    font-size: 40px;
-    margin: 20px;
+.heart::before {
+    top: -50px;
+    left: 0;
 }
 
-.font2 {
-    font-family: 'Permanent Marker', cursive;
-    font-size: 40px;
-    margin: 20px;
+.heart::after {
+    left: 50px;
+    top: 0;
 }
 
-.font3 {
-    font-family: 'Pacifico', cursive;
-    font-size: 40px;
-    margin: 20px;
+.beat {
+    animation: beat 0.5s infinite alternate;
 }
 
-.font4 {
-    font-family: 'Lobster', cursive;
-    font-size: 40px;
-    margin: 20px;
+@keyframes beat {
+    0% {
+        transform: scale(1) rotate(-45deg);
+    }
+    100% {
+        transform: scale(1.2) rotate(-45deg);
+    }
 }
